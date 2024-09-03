@@ -642,6 +642,7 @@ function closeModal(id) {
 function endGame(who) {
     if (who == player) {
         announceWinner("Congratulations, [Your name] won!");
+        announceWinner(`Congratulations, ${yourName} won!`);
     } else if (who == computer) {
         announceWinner("Computer wins!");
     } else {
@@ -661,8 +662,8 @@ function endGame(who) {
     setTimeout(restartGame, 800);
 }
 
+let yourName = '';
 function setName(){
-    let yourName = '';
     let defaultName = document.getElementById('your-name');
     if(defaultName.innerText == '[YOUR NAME]'){
         do{
