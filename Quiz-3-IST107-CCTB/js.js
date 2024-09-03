@@ -288,8 +288,8 @@ function initialize() {
         myGrid.cells[i] = 0;
     }
     //setName();
+    setName();
     setTimeout(assignRoles, 500);
-    
     //setInterval(showOptions, 500);
     // debugger;
 }
@@ -364,7 +364,6 @@ function restartGame(ask) {
             return;
         }
     }
-    setName();
     gameOver = false;
     moves = 0;
     winner = 0;
