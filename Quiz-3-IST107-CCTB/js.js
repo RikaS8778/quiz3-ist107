@@ -287,8 +287,10 @@ function initialize() {
     for (var i = 0; i <= myGrid.cells.length - 1; i++) {
         myGrid.cells[i] = 0;
     }
-    // setTimeout(assignRoles, 500);
-    setInterval(showOptions, 500);
+    //setName();
+    setTimeout(assignRoles, 500);
+    
+    //setInterval(showOptions, 500);
     // debugger;
 }
 
@@ -362,6 +364,7 @@ function restartGame(ask) {
             return;
         }
     }
+    setName();
     gameOver = false;
     moves = 0;
     winner = 0;
@@ -659,3 +662,13 @@ function endGame(who) {
     setTimeout(restartGame, 800);
 }
 
+function setName(){
+    let yourName = '';
+    let defaultName = document.getElementById('your-name');
+    if(defaultName.innerText == '[YOUR NAME]'){
+        do{
+            yourName = prompt('Hello, player! Type your player name :)');
+            defaultName.innerText = yourName;
+        } while(!yourName)
+    }
+}
